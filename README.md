@@ -30,3 +30,36 @@ The examples included with the library show how to use the library. The examples
 10. **Run Inference**: Invoke the inference operation using the `modelRunInference()` function.
 11. **Read Output Data**: Read the output data using the `modelGetOutput()` function.
 
+## Reference
+
+**Function**
+
+bool **modelInit**(_const unsigned char* model, byte* tensorArena, int tensorArenaSize_);
+
+*Initializes TensorFlow Lite Micro environment, instantiates an allOpResolver and allocates input and output tensors*
+
+*Returns:* true = success, false = failure.
+
+
+**Function**
+
+bool **modelSetInput**(_float inputValue, int index_);
+
+*Writes _inputValue_ in position _index_ of the input tensor*
+
+*Returns:* true = success, false = failure.
+
+
+**Function**
+
+bool **modelRunInference**();
+
+*Invoke the TensorFlow Lite Micro Interpreter and executes the inference algorithm*
+
+*Returns:* true = success, false = failure.
+
+**Function**
+
+float **modelGetOutput**(_int index_);
+
+*Returns output value from the position index of the output tensor*
