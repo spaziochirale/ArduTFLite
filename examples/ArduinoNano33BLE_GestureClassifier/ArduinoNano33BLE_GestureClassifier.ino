@@ -33,10 +33,13 @@ const int numSamples = 119; // Number of samples for a single gesture
 int samplesRead; // sample counter 
 const int inputLength = 714; // dimension of input tensor (6 values * 119 samples)
 
-// This memory area is used by TensorFlow Lite and must be defined as global 
-// the size must be defined by trial and error. We use here a quite large value
+// The Tensor Arena memory area is used by TensorFlow Lite to store input, output and intermediate tensors
+// It must be defined as a global array of byte (or u_int8 which is the same type on Arduino) 
+// The Tensor Arena size must be defined by trials and errors. We use here a quite large value.
+// The alignas(16) directive is used to ensure that the array is aligned on a 16-byte boundary,
+// this is important for performance and to prevent some issues on ARM microcontroller architectures.
 constexpr int tensorArenaSize = 8 * 1024;
-byte tensorArena[tensorArenaSize];
+alignas(16) byte tensorArena[tensorArenaSize];
 
 // a simple table to map gesture labels
 const char* GESTURES[] = {

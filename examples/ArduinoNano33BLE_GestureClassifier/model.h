@@ -1,4 +1,13 @@
-const unsigned char model[] = {
+/* This header file contains the definition of the unsigned char array that represents 
+the binary format of the TensorFlow Lite model to be run by the Arduino sketch. 
+This TensorFlow Lite model was generated on an external development system, 
+where the original Deep Neural Network model was created and trained. 
+The trained model was saved in .tflite format and its hexadecimal dump was used to build 
+the following declaration with initialization of the model array.
+The alignas(16) directive is used to ensure that the array is aligned on a 16-byte boundary,
+this is important for performance and to prevent some issues on ARM microcontroller architectures.
+*/
+alignas(16) const unsigned char model[] = {
   0x1c, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x14, 0x00, 0x20, 0x00,
   0x1c, 0x00, 0x18, 0x00, 0x14, 0x00, 0x10, 0x00, 0x0c, 0x00, 0x00, 0x00,
   0x08, 0x00, 0x04, 0x00, 0x14, 0x00, 0x00, 0x00, 0x1c, 0x00, 0x00, 0x00,
