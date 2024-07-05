@@ -2,7 +2,7 @@
 #define ARDUTFLITE_H
 
 #include <Arduino.h>
-#include <TensorFlowLite.h>
+#include <Chirale_TensorFlowLite.h>
 #include <tensorflow/lite/micro/all_ops_resolver.h>
 #include <tensorflow/lite/micro/micro_interpreter.h>
 #include <tensorflow/lite/schema/schema_generated.h>
